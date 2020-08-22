@@ -19,11 +19,11 @@ runs:
         local::lib->import;
 
         for my $var (@vars) {
-	        if ( exists $old{$var} ) {
-		        if ( $old{$var} ne $ENV{$var} ) {
-			        say "-->$ENV{$var}<--\n";
+                if ( exists $old{$var} ) {
+                        if ( $old{$var} ne $ENV{$var} ) {
+                                say "-->$ENV{$var}<--\n";
                         }
-	        }
+                }
                 elsif ( exists $ENV{$var} ) {
                         say "==>$ENV{$var}<--\n";
                 }
