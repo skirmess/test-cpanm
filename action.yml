@@ -6,7 +6,7 @@ runs:
   steps: 
     - run: curl -L -s -o cpanminus.pl https://cpanmin.us
       shell: bash
-    - run: perl cpanminus.pl App::cpanminus
+    - run: perl cpanminus.pl App::cpanminus local::lib
       shell: bash
     - run: rm -f cpanminus.pl
       shell: bash
