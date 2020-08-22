@@ -13,7 +13,8 @@ runs:
     - run: |
         my @vars = qw(PERL_MB_OPT PERL_MM_OPT PERL5LIB PATH PERL_LOCAL_LIB_ROOT);
 
-        my @old{@vars} = @ENV{@vars};
+        my %old;
+        @old{@vars} = @ENV{@vars};
 
         require local::lib;
         local::lib->import;
