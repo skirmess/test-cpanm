@@ -23,7 +23,7 @@ runs:
         for my $var (@vars) {
                 if ( exists $old{$var} ) {
                         if ( $old{$var} ne $ENV{$var} ) {
-                                print "-->$ENV{$var}<--\n";
+                                print "-->$var\n  >$ENV{$var}<--\n  >$old{$var}<--\n";
                         }
                 }
                 elsif ( exists $ENV{$var} ) {
