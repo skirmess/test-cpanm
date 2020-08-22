@@ -24,6 +24,6 @@ runs:
                 next if !exists $ENV{$var};
                 next if exists $old{$var} && $old{$var} eq $ENV{$var};
 
-                print "::set-env ${var}::$ENV{$var}\n";
+                print "::set-env name=${var}::$ENV{$var}\n";
         }
       shell: perl -- {0}
