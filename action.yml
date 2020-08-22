@@ -11,6 +11,7 @@ runs:
     - run: rm -f cpanminus.pl
       shell: bash
     - run: |
+        use lib '~/perl5/lib/perl5/';
         my @vars = qw(PERL_MB_OPT PERL_MM_OPT PERL5LIB PATH PERL_LOCAL_LIB_ROOT);
 
         my %old;
@@ -29,4 +30,4 @@ runs:
                         print "==>$ENV{$var}<--\n";
                 }
         }
-      shell: perl -I ~/perl5/lib/perl5/ -- {0}
+      shell: perl -- {0}
