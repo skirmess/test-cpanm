@@ -21,11 +21,11 @@ runs:
         for my $var (@vars) {
                 if ( exists $old{$var} ) {
                         if ( $old{$var} ne $ENV{$var} ) {
-                                say "-->$ENV{$var}<--\n";
+                                print "-->$ENV{$var}<--\n";
                         }
                 }
                 elsif ( exists $ENV{$var} ) {
-                        say "==>$ENV{$var}<--\n";
+                        print "==>$ENV{$var}<--\n";
                 }
         }
       shell: perl -- {0}
