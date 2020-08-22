@@ -1,0 +1,12 @@
+name: Install cpanminus
+description: Install cpanminus from web
+
+runs:
+  using: "composite"
+  steps: 
+    - run: curl -L -s -o cpanminus.pl https://cpanmin.us
+      shell: bash
+    - run: perl cpanminus.pl App::cpanminus
+      shell: bash
+    - run: rm -f cpanminus.pl
+      shell: bash
