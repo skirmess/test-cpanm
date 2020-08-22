@@ -11,7 +11,7 @@ runs:
     - run: rm -f cpanminus.pl
       shell: bash
     - run: |
-        use lib '~/perl5/lib/perl5/';
+        use lib '/home/runner/perl5/lib/perl5/';
         my @vars = qw(PERL_MB_OPT PERL_MM_OPT PERL5LIB PATH PERL_LOCAL_LIB_ROOT);
 
         my %old;
