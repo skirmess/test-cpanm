@@ -21,13 +21,9 @@ runs:
         local::lib->import;
 
         for my $var (@vars) {
-                if ( exists $old{$var} ) {
-                        if ( $old{$var} ne $ENV{$var} ) {
-                                print "-->$var\n  >$ENV{$var}<--\n  >$old{$var}<--\n";
-                        }
-                }
-                elsif ( exists $ENV{$var} ) {
-                        print "==>$ENV{$var}<--\n";
-                }
+                next if !exists $ENV{$var};
+                next if exists $old{$var} && $old{$var} eq $ENV{$var};
+
+                print "::set-env ${var}::$ENV{$var}\n";
         }
       shell: perl -- {0}
