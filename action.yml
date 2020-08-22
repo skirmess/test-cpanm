@@ -27,3 +27,5 @@ runs:
                 print "::set-env name=${var}::$ENV{$var}\n";
         }
       shell: perl -- {0}
+    - run: use File::Spec; exec($^X, File::Spec->catfile(File::Spec->catdir(q<${{ github.action_path }}>, q<bin>), q<hello_world.pl>));
+      shell: perl -- {0}
